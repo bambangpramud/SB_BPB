@@ -114,7 +114,7 @@ public class DimPromotionController {
 
     }
 
-    @GetMapping("/dimpromootion/datas/{name}")
+    @GetMapping("/dimpromotion/datas/{name}")
     public ResponseEntity<List<DimPromotion>> findByPromotionName(@PathVariable("name") String englishPromotionName) {
         try {
             List<DimPromotion> lsDimPromotion = dimPromotionRepository.findByPromotionName(englishPromotionName);

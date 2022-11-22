@@ -79,7 +79,7 @@ public class JDBCDimPromotionRepository implements DimPromotionRepository{
 
     @Override
     public List<DimPromotion> findByPromotionName(String englishPromotionName) {
-        return jdbcTemplate.query("SELECT * from DimPromotion WHERE EnglishPromotionName=?",
+        return jdbcTemplate.query("SELECT * from DimPromotion WHERE EnglishPromotionName LIKE CONCAT('%',?,'%')",
                 BeanPropertyRowMapper.newInstance(DimPromotion.class), englishPromotionName);
     }
 
